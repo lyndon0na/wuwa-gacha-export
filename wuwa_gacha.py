@@ -11,8 +11,8 @@
   python3 wuwa_gacha.py <游戏目录>    # 直接指定，跳过输入
 
 游戏目录填到哪一层都可以，例如：
-  ~/Games/KuroGames/Wuthering Waves Game
-  D:\\Wuthering Waves\\Wuthering Waves Game\\Client\\Saved\\Logs
+  D:\\Wuthering Waves\\Wuthering Waves Game
+  ~/Games/KuroGames/Wuthering Waves Game/Client/Saved/Logs
 
 注意：链接有时效，过期后需重新在游戏内打开「唤取 → 唤取记录」页面再运行本脚本。
 """
@@ -57,7 +57,8 @@ def clean_path(raw: str) -> str:
 
 def ask_game_dir() -> str:
     print("提示：请先在游戏内打开「唤取 → 唤取记录」页面，游戏会把带链接的日志写进 Client.log。")
-    root = clean_path(input("请输入游戏目录（如 ~/Games/KuroGames/Wuthering Waves Game）: "))
+    raw = input("请输入游戏目录（如 D:\\Wuthering Waves\\Wuthering Waves Game）: ")
+    root = clean_path(raw)
     if not root:
         sys.exit("未输入游戏目录，已退出。")
     return root
