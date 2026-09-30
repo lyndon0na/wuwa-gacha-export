@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# 运行产物（含个人 UID / 链接，请勿提交）
+wuwa_gacha_url.txt
+wuwa_gacha_records.json
+wuwa_gacha_report.md
